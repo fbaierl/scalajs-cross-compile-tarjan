@@ -1,4 +1,4 @@
-# Scala implementation of Tarjan's strongly connected components algorithm
+# Scala JVM & Scala.js implementation of Tarjan's strongly connected components algorithm
 
 Tarjan's strongly connected components algorithm is an algorithm in graph theory for finding the strongly connected components of a directed graph in linear time.
 
