@@ -1,4 +1,4 @@
-name := "Foo root project"
+name := "scalajs-cross-compile-tarjan"
 
 scalaVersion in ThisBuild := "2.12.4"
 
