@@ -1,6 +1,4 @@
 import sbt.Keys.libraryDependencies
-import xerial.sbt.Sonatype.SonatypeKeys._
-
 
 name := "scalajs-cross-compile-tarjan"
 
@@ -21,20 +19,15 @@ lazy val tarjan = crossProject.in(file(".")).
     scalaVersion := "2.12.4",
     libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.5",
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % "test",
-    
     normalizedName := "scala-tarjan",
     crossScalaVersions := Seq("2.10.6", "2.11.11, 2.12.2"),
     homepage := Some(url("https://github.com/fbaierl/scalajs-cross-compile-tarjan")),
-
     licenses += ("MIT License", url("http://www.opensource.org/licenses/mit-license.php")),
-
     scmInfo := Some(ScmInfo(
       url("https://github.com/fbaierl/scalajs-cross-compile-tarjan"),
       "scm:git:git@github.com/fbaierl/scalajs-cross-compile-tarjan.git",
       Some("scm:git:git@github.com/fbaierl/scalajs-cross-compile-tarjan.git"))),
-
     publishMavenStyle := true,
-
     publishTo := {
       val nexus = "https://oss.sonatype.org/"
       if (isSnapshot.value)
@@ -42,16 +35,6 @@ lazy val tarjan = crossProject.in(file(".")).
       else
         Some("releases" at nexus + "service/local/staging/deploy/maven2")
     },
-
-    //pomExtra := (
-    //  <developers>
-    //    <developer>
-    //      <id>jducoeur</id>
-    //      <name>Mark Waks</name>
-    //      <url>https://github.com/jducoeur/</url>
-    //    </developer>
-    //  </developers>
-    //)
     pomExtra := <developers>
       <developer>
         <id>fbaierl</id>
@@ -59,9 +42,7 @@ lazy val tarjan = crossProject.in(file(".")).
         <url>https://github.com/fbaierl</url>
       </developer>
     </developers>,
-
     pomIncludeRepository := { _ => false }
-
   ).
   jvmSettings(
     libraryDependencies += "org.scala-js" %% "scalajs-stubs" % scalaJSVersion % "provided"
