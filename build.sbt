@@ -28,6 +28,8 @@ lazy val tarjanJS = tarjan.js
 
 // Publishing
 
+useGpg := true
+
 ThisBuild / organization := "com.github.fbaierl"
 ThisBuild / organizationName := "fbaierl"
 ThisBuild / organizationHomepage := Some(url("https://github.com/fbaierl"))
