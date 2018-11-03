@@ -1,3 +1,5 @@
+import sbt.Keys.libraryDependencies
+
 name := "scalajs-cross-compile-tarjan"
 
 scalaVersion in ThisBuild := "2.12.4"
@@ -15,7 +17,9 @@ lazy val tarjan = crossProject.in(file(".")).
   settings(
     name := "scala-tarjan",
     version := "0.1-SNAPSHOT",
-    organization := "com.github.fbaierl"
+    organization := "com.github.fbaierl",
+    libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.5",
+    libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % "test"
   ).
   jvmSettings(
     libraryDependencies += "org.scala-js" %% "scalajs-stubs" % scalaJSVersion % "provided"
