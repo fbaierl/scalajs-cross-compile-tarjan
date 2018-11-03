@@ -16,7 +16,7 @@ lazy val tarjan = crossProject.in(file(".")).
     organization := "com.github.fbaierl"
   ).
   jvmSettings(
-    // Add JVM-specific settings here
+    libraryDependencies += "org.scala-js" %% "scalajs-stubs" % scalaJSVersion % "provided"
   ).
   jsSettings(
     // Add JS-specific settings here

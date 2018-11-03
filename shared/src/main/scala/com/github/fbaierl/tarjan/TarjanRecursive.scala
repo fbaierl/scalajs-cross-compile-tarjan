@@ -1,11 +1,13 @@
 package com.github.fbaierl.tarjan
 
 import scala.collection.mutable
+import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 
 /**
   * Tarjan's strongly connected components algorithm is an algorithm in graph theory for finding the strongly connected
   * components of a directed graph in linear time.
   */
+@JSExportTopLevel("Tarjan")
 object TarjanRecursive {
 
   /**
@@ -14,6 +16,7 @@ object TarjanRecursive {
     * @param g the graph
     * @return the strongly connected components of g
     */
+  @JSExport
   def tarjan[T](g: Map[T, List[T]]): mutable.Buffer[mutable.Buffer[T]] = {
     /*
      * explanation: generic tarjan maps everything on Int's and calls tarjan on Ints
