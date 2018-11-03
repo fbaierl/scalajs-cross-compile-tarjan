@@ -6,7 +6,9 @@ lazy val root = project.in(file(".")).
   aggregate(tarjanJS, tarjanJVM).
   settings(
     publish := {},
-    publishLocal := {}
+    publishLocal := {},
+    libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.5",
+    libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % "test"
   )
 
 lazy val tarjan = crossProject.in(file(".")).
