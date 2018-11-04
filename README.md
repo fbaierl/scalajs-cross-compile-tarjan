@@ -34,13 +34,13 @@ Add a dependency in your build.sbt:
 - JVM Scala:
 
 ```scala
-libraryDependencies += "com.github.fbaierl" %% "scala-tarjan_2.12" % "0.1.1"
+libraryDependencies += "com.github.fbaierl" %% "scala-tarjan" % "0.1.1"
 ```
 
 - Scala.js:
 
 ```scala
-libraryDependencies += "com.github.fbaierl" %%% "scala-tarjan_2.12" % "0.1.1"
+libraryDependencies += "com.github.fbaierl" %%% "scala-tarjan" % "0.1.1"
 ```
 
 
