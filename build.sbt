@@ -14,7 +14,7 @@ lazy val root = project.in(file(".")).
 lazy val tarjan = crossProject.in(file(".")).
   settings(
     name := "scala-tarjan",
-    version := "0.1-SNAPSHOT",
+    version := "0.1.1",
     organization := "com.github.fbaierl",
     scalaVersion := "2.12.4",
     libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.5",

@@ -17,7 +17,7 @@ object TarjanRecursive {
     * @return the strongly connected components of g
     */
   @JSExport
-  def tarjan[T](g: Map[T, List[T]]): mutable.Buffer[mutable.Buffer[T]] = {
+  def tarjan[T](g: Map[T, List[T]]): List[List[T]] = {
     /*
      * explanation: generic tarjan maps everything on Int's and calls tarjan on Ints
      */
@@ -25,17 +25,17 @@ object TarjanRecursive {
     val nodes = g.keySet.toList
     val input = mutable.Map.empty[Int, List[Int]]
     nodes.foreach { node =>
-      input.put(nodes.indexOf(node), g(node).map(nodes.indexOf(_)))
+      input.put(nodes.indexOf(node), g(node).map(nodes.indexOf))
     }
     tarjanInt(collection.immutable.Map(input.toList:_*)).map(_.map(nodes(_)))
   }
 
-  private def tarjanInt(g: Map[Int, List[Int]]): mutable.Buffer[mutable.Buffer[Int]] = {
+  private def tarjanInt(g: Map[Int, List[Int]]): List[List[Int]] = {
     val mainStack = mutable.Buffer.empty[Int]
     val stackSet = mutable.Set.empty[Int]
     val index = mutable.Map.empty[Int, Int] // index of v
     val lowLink = mutable.Map.empty[Int, Int] // low link of v
-    val result = mutable.Buffer.empty[mutable.Buffer[Int]]
+    var result = List.empty[List[Int]]
     def visit(v: Int): Unit = {
       index(v) = index.size
       lowLink(v) = index(v)
@@ -50,14 +50,14 @@ object TarjanRecursive {
         }
       }
       if (lowLink(v) == index(v)) {
-        val scc = mutable.Buffer.empty[Int]
+        var scc = List[Int]()
         var w = -1
         while(v != w) {
           w = mainStack.remove(mainStack.size - 1)
-          scc += w
+          scc = scc.::(w)
           stackSet -= w
         }
-        result += scc
+        result = result.::(scc)
       }
     }
     for (v <- g.keys) {
