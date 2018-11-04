@@ -28,6 +28,7 @@ lazy val tarjan = crossProject.in(file(".")).
       "scm:git:git@github.com/fbaierl/scalajs-cross-compile-tarjan.git",
       Some("scm:git:git@github.com/fbaierl/scalajs-cross-compile-tarjan.git"))),
     publishMavenStyle := true,
+    isSnapshot := false,
     publishTo := {
       val nexus = "https://oss.sonatype.org/"
       if (isSnapshot.value)

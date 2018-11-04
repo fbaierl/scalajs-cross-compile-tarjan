@@ -21,11 +21,28 @@ tarjan(Map(
 ```
 Result:
 ```scala
-ArrayBuffer(
-    ArrayBuffer("d", "e", "c"),
-    ArrayBuffer("a"), 
-    ArrayBuffer("b"))
+List(List("d", "e", "c"),
+     List("a"), 
+     List("b"))
 ```
+
+#Installation
+
+Add a dependency in your build.sbt:
+
+
+- JVM Scala:
+
+```scala
+libraryDependencies += "com.github.fbaierl" %% "scala-tarjan_2.12" % "0.1.1"
+```
+
+- Scala.js:
+
+```scala
+libraryDependencies += "com.github.fbaierl" %%% "scala-tarjan_2.12" % "0.1.1"
+```
+
 
 # See also:
 Python version of this algorithm: [py-tarjan](https://github.com/bwesterb/py-tarjan)
