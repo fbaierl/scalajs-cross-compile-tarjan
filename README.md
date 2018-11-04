@@ -26,7 +26,7 @@ List(List("d", "e", "c"),
      List("b"))
 ```
 
-#Installation
+# Installation
 
 Add a dependency in your build.sbt:
 
