@@ -36,7 +36,8 @@ lazy val tarjan = crossProject.in(file(".")).
       else
         Some("releases" at nexus + "service/local/staging/deploy/maven2")
     },
-    pomExtra := <developers>
+    pomExtra :=
+      <developers>
       <developer>
         <id>fbaierl</id>
         <name>Florian Baierl</name>
