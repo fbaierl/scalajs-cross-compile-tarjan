@@ -7,7 +7,7 @@ Tarjan's strongly connected components algorithm is an algorithm in graph theory
 
 # Example
 
-<img src="https://raw.githubusercontent.com/fbaierl/scala-tarjan/master/example_diagram.png" width="220">
+<img src="https://raw.githubusercontent.com/fbaierl/scalajs-cross-compile-tarjan/master/example_diagram.png" width="220">
 
 ```scala
 import com.github.fbaierl.tarjan.TarjanRecursive._
